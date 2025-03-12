@@ -19,7 +19,7 @@ export default async function EventPage({ params }: { params: { id: string } }) 
         <div className="lg:col-span-2">
           <div className="relative aspect-video rounded-lg overflow-hidden mb-6">
             <Image
-              src={event.image || getEventImage(event.id, event.category, 1200, 600)}
+              src={event.image ?? getEventImage(event.id, event.category, 1200, 600)}
               alt={event.title}
               fill
               className="object-cover"
@@ -81,4 +81,3 @@ export default async function EventPage({ params }: { params: { id: string } }) 
     </div>
   )
 }
-

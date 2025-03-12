@@ -90,7 +90,7 @@ const tickets: Ticket[] = [
     userId: "user1",
     purchaseDate: "2025-03-10T14:30:00Z",
     used: false,
-    event: events[0] as Event,
+    event: events[0]!,
   },
   {
     id: "t2",
@@ -98,7 +98,7 @@ const tickets: Ticket[] = [
     userId: "user1",
     purchaseDate: "2025-02-20T10:15:00Z",
     used: false,
-    event: events[2] as Event,
+    event: events[2]!,
   },
   {
     id: "t3",
@@ -107,7 +107,7 @@ const tickets: Ticket[] = [
     purchaseDate: "2025-01-05T16:45:00Z",
     used: true,
     event: {
-      ...(events[3] as Event),
+      ...events[3]!,
       date: "2025-01-25T20:00:00Z", // Past date for this ticket
     },
   },
@@ -123,7 +123,7 @@ export async function getEvents(): Promise<Event[]> {
 export async function getEventById(id: string): Promise<Event | null> {
   // Simulate API delay
   await new Promise((resolve) => setTimeout(resolve, 300))
-  return events.find((event) => event.id === id) || null
+  return events.find((event) => event.id === id) ?? null
 }
 
 export async function getTickets(): Promise<Ticket[]> {
@@ -135,6 +135,5 @@ export async function getTickets(): Promise<Ticket[]> {
 export async function getTicketById(id: string): Promise<Ticket | null> {
   // Simulate API delay
   await new Promise((resolve) => setTimeout(resolve, 300))
-  return tickets.find((ticket) => ticket.id === id) || null
+  return tickets.find((ticket) => ticket.id === id) ?? null
 }
-
