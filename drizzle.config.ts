@@ -6,7 +6,7 @@ export default {
   schema: "./src/server/db/schema.ts",
   dialect: "sqlite",
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: env.TICKETING_PLATFORM_DB_URL,
   },
   tablesFilter: ["ticketing-platform_*"],
 } satisfies Config;
