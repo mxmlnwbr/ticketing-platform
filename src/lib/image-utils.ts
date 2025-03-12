@@ -30,7 +30,7 @@ export function getRandomEventImage(category?: string, width = 600, height = 400
   // Get keywords for the matched category or select a random category if none provided
   const keywords = matchedCategory && matchedCategory.keywords 
     ? matchedCategory.keywords 
-    : eventCategories[Math.floor(Math.random() * eventCategories.length)].keywords;
+    : eventCategories[Math.floor(Math.random() * eventCategories.length)]?.keywords || ["event"];
   
   // Select a random keyword from the category
   const keyword = keywords[Math.floor(Math.random() * keywords.length)];
@@ -62,7 +62,7 @@ export function getEventImage(eventId: string, category?: string, width = 600, h
   // Get keywords for the matched category or select a deterministic category based on event ID
   const keywords = matchedCategory && matchedCategory.keywords 
     ? matchedCategory.keywords 
-    : eventCategories[seed % eventCategories.length].keywords;
+    : eventCategories[seed % eventCategories.length]?.keywords || ["event"];
   
   // Select a keyword based on the event ID
   const keyword = keywords[seed % keywords.length];

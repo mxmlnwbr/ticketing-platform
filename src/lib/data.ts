@@ -90,7 +90,7 @@ const tickets: Ticket[] = [
     userId: "user1",
     purchaseDate: "2025-03-10T14:30:00Z",
     used: false,
-    event: events[0],
+    event: events[0] as Event,
   },
   {
     id: "t2",
@@ -98,7 +98,7 @@ const tickets: Ticket[] = [
     userId: "user1",
     purchaseDate: "2025-02-20T10:15:00Z",
     used: false,
-    event: events[2],
+    event: events[2] as Event,
   },
   {
     id: "t3",
@@ -107,7 +107,7 @@ const tickets: Ticket[] = [
     purchaseDate: "2025-01-05T16:45:00Z",
     used: true,
     event: {
-      ...events[3],
+      ...(events[3] as Event),
       date: "2025-01-25T20:00:00Z", // Past date for this ticket
     },
   },
