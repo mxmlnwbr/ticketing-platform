@@ -15,7 +15,7 @@ const config = {
     },
     
     images: {
-        domains: ['picsum.photos'],
+        domains: ['as1.ftcdn.net'],
     },
 };
 
