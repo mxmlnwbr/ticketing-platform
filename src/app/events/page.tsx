@@ -60,10 +60,10 @@ export default async function EventsPage({
         <form className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="relative">
             <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
-            <Input name="query" placeholder="Search events..." defaultValue={query || ""} className="pl-10" />
+            <Input name="query" placeholder="Search events..." defaultValue={query ?? ""} className="pl-10" />
           </div>
 
-          <Select name="category" defaultValue={category || ""}>
+          <Select name="category" defaultValue={category ?? ""}>
             <SelectTrigger>
               <SelectValue placeholder="Category" />
             </SelectTrigger>
@@ -77,7 +77,7 @@ export default async function EventsPage({
             </SelectContent>
           </Select>
 
-          <Select name="sort" defaultValue={sort || ""}>
+          <Select name="sort" defaultValue={sort ?? ""}>
             <SelectTrigger>
               <SelectValue placeholder="Sort by" />
             </SelectTrigger>
@@ -113,4 +113,3 @@ export default async function EventsPage({
     </div>
   )
 }
-

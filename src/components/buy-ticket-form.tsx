@@ -44,7 +44,7 @@ export default function BuyTicketForm({
       if (result.success) {
         router.push(`/my-tickets`)
       } else {
-        setError(result.message || "Failed to purchase ticket")
+        setError(result.message ?? "Failed to purchase ticket")
       }
     } catch (err) {
       setError("An unexpected error occurred. Please try again.")
@@ -102,4 +102,3 @@ export default function BuyTicketForm({
     </form>
   )
 }
-

@@ -12,7 +12,7 @@ export default function EventCard({ event }: { event: Event }) {
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative aspect-video">
         <Image
-          src={event.image || getEventImage(event.id, event.category, 600, 300)}
+          src={event.image ?? getEventImage(event.id, event.category, 600, 300)}
           alt={event.title}
           fill
           className="object-cover"
@@ -46,4 +46,3 @@ export default function EventCard({ event }: { event: Event }) {
     </Card>
   )
 }
-

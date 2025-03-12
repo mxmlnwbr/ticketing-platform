@@ -3,6 +3,7 @@ import { getTickets } from "~/lib/data"
 import TicketCard from "~/components/ticket-card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs"
 import { Skeleton } from "~/components/ui/skeleton"
+import Link from "next/link"
 
 export default async function MyTicketsPage() {
   const tickets = await getTickets()
@@ -25,10 +26,10 @@ export default async function MyTicketsPage() {
             {upcomingTickets.length === 0 ? (
               <div className="text-center py-12 bg-muted/30 rounded-lg">
                 <h2 className="text-xl font-medium mb-2">No upcoming tickets</h2>
-                <p className="text-muted-foreground mb-4">You don't have any upcoming events</p>
-                <a href="/events" className="text-primary hover:underline">
+                <p className="text-muted-foreground mb-4">You don&apos;t have any upcoming events</p>
+                <Link href="/events" className="text-primary hover:underline">
                   Browse events
-                </a>
+                </Link>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -44,7 +45,7 @@ export default async function MyTicketsPage() {
             {pastTickets.length === 0 ? (
               <div className="text-center py-12 bg-muted/30 rounded-lg">
                 <h2 className="text-xl font-medium mb-2">No past tickets</h2>
-                <p className="text-muted-foreground">You haven't attended any events yet</p>
+                <p className="text-muted-foreground">You haven&apos;t attended any events yet</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -79,4 +80,3 @@ function TicketsLoadingSkeleton({ count = 3 }: { count?: number }) {
     </div>
   )
 }
-

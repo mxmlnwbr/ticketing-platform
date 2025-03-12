@@ -20,7 +20,7 @@ export default function TicketCard({ ticket, isPast = false }: { ticket: Ticket;
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative aspect-video">
         <Image
-          src={ticket.event.image || getEventImage(ticket.event.id, ticket.event.category, 600, 300)}
+          src={ticket.event.image ?? getEventImage(ticket.event.id, ticket.event.category, 600, 300)}
           alt={ticket.event.title}
           fill
           className="object-cover"
@@ -72,4 +72,3 @@ export default function TicketCard({ ticket, isPast = false }: { ticket: Ticket;
     </Card>
   )
 }
-

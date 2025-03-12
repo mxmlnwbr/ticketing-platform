@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import "../styles/globals.css"
 import { Inter } from "next/font/google"
+import Link from "next/link"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,20 +24,20 @@ export default function RootLayout({
           <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
             <div className="container flex h-16 items-center justify-between">
               <nav className="flex items-center gap-6">
-                <a href="/" className="text-lg font-semibold">
+                <Link href="/" className="text-lg font-semibold">
                   TicketHub
-                </a>
-                <a href="/events" className="text-sm font-medium hover:text-primary">
+                </Link>
+                <Link href="/events" className="text-sm font-medium hover:text-primary">
                   Events
-                </a>
-                <a href="/my-tickets" className="text-sm font-medium hover:text-primary">
+                </Link>
+                <Link href="/my-tickets" className="text-sm font-medium hover:text-primary">
                   My Tickets
-                </a>
+                </Link>
               </nav>
               <div className="flex items-center gap-4">
-                <a href="/scanner" className="text-sm font-medium hover:text-primary">
+                <Link href="/scanner" className="text-sm font-medium hover:text-primary">
                   Scanner
-                </a>
+                </Link>
               </div>
             </div>
           </header>
@@ -46,4 +47,3 @@ export default function RootLayout({
     </html>
   )
 }
-
