@@ -13,6 +13,10 @@ const config = {
     typescript: {
         ignoreBuildErrors: true
     },
+    
+    images: {
+        domains: ['picsum.photos'],
+    },
 };
 
 export default config;

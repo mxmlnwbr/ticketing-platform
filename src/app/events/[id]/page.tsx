@@ -4,7 +4,6 @@ import { CalendarIcon, MapPinIcon, ClockIcon, UsersIcon } from "lucide-react"
 import { getEventById } from "~/lib/data"
 import BuyTicketForm from "~/components/buy-ticket-form"
 import { formatDate, formatTime, formatCurrency } from "~/lib/utils"
-import { getEventImage } from "~/lib/image-utils"
 
 export default async function EventPage({ params }: { params: { id: string } }) {
   const event = await getEventById(params.id)
@@ -19,7 +18,7 @@ export default async function EventPage({ params }: { params: { id: string } }) 
         <div className="lg:col-span-2">
           <div className="relative aspect-video rounded-lg overflow-hidden mb-6">
             <Image
-              src={event.image ?? getEventImage(event.id, event.category, 1200, 600)}
+              src={event.image!}
               alt={event.title}
               fill
               className="object-cover"

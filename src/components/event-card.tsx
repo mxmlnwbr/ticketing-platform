@@ -4,7 +4,6 @@ import { Card, CardContent, CardFooter } from "~/components/ui/card"
 import { Button } from "~/components/ui/button"
 import { CalendarIcon, MapPinIcon } from "lucide-react"
 import { formatDate, formatCurrency } from "~/lib/utils"
-import { getEventImage } from "~/lib/image-utils"
 import type { Event } from "~/lib/types"
 
 export default function EventCard({ event }: { event: Event }) {
@@ -12,7 +11,7 @@ export default function EventCard({ event }: { event: Event }) {
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative aspect-video">
         <Image
-          src={event.image ?? getEventImage(event.id, event.category, 600, 300)}
+          src={event.image!}
           alt={event.title}
           fill
           className="object-cover"

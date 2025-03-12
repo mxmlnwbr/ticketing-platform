@@ -7,7 +7,6 @@ import { Card, CardContent, CardFooter } from "~/components/ui/card"
 import { Button } from "~/components/ui/button"
 import { CalendarIcon, MapPinIcon, ClockIcon, DownloadIcon } from "lucide-react"
 import { formatDate, formatTime } from "~/lib/utils"
-import { getEventImage } from "~/lib/image-utils"
 import type { Ticket } from "~/lib/types"
 
 export default function TicketCard({ ticket, isPast = false }: { ticket: Ticket; isPast?: boolean }) {
@@ -20,7 +19,7 @@ export default function TicketCard({ ticket, isPast = false }: { ticket: Ticket;
     <Card className="overflow-hidden h-full flex flex-col">
       <div className="relative aspect-video">
         <Image
-          src={ticket.event.image ?? getEventImage(ticket.event.id, ticket.event.category, 600, 300)}
+          src={ticket.event.image!}
           alt={ticket.event.title}
           fill
           className="object-cover"
