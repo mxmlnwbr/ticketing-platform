@@ -1,13 +1,23 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 import { NextResponse } from 'next/server'
 
-const isProtectedRoute = createRouteMatcher(['/scanner(.*)', '/my-tickets(.*)', '/admin(.*)'])
-
 const isAdminRoute = createRouteMatcher(['/admin(.*)'])
+const isMyTicketsRoute = createRouteMatcher(['/my-tickets(.*)'])
+const isScannerRoute = createRouteMatcher(['/scanner(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
-  // Protect all routes starting with `/admin`
+  // Protect all routes starting with `/admin` and '/my-tickets'
   if (isAdminRoute(req) && (await auth()).sessionClaims?.metadata?.role !== 'admin') {
+    const url = new URL('/', req.url)
+    return NextResponse.redirect(url)
+  }
+
+  if (isMyTicketsRoute(req) && (await auth()).sessionClaims?.metadata?.role !== 'admin') {
+    const url = new URL('/', req.url)
+    return NextResponse.redirect(url)
+  }
+
+  if (isScannerRoute(req) && (await auth()).sessionClaims?.metadata?.role !== 'admin') {
     const url = new URL('/', req.url)
     return NextResponse.redirect(url)
   }
