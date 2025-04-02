@@ -18,13 +18,13 @@ const config = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'as1.ftcdn.net',
+                hostname: 'images.unsplash.com',
                 port: '',
                 pathname: '/**',
             },
             {
                 protocol: 'https',
-                hostname: 'images.unsplash.com',
+                hostname: 'picsum.photos',
                 port: '',
                 pathname: '/**',
             },

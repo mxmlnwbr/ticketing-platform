@@ -24,7 +24,7 @@ export default async function Home() {
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" variant="secondary">
                 <Link href="/events">
-                  Browse Events <ArrowRightIcon className="ml-2 h-4 w-4" />
+                  Browse Events
                 </Link>
               </Button>
               <Button
