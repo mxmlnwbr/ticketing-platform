@@ -5,8 +5,8 @@ import { getEventById } from "~/lib/data"
 import BuyTicketForm from "~/components/buy-ticket-form"
 import { formatDate, formatTime, formatCurrency } from "~/lib/utils"
 
-export default async function EventPage({ params }: { params: { id: string } }) {
-  const event = await getEventById(params.id)
+export default async function EventPage({ params }: { params: Promise<{ id: string }> }) {
+  const event = await getEventById((await params).id)
 
   if (!event) {
     notFound()

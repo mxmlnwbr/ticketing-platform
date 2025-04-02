@@ -8,10 +8,10 @@ import { SearchIcon, FilterIcon } from "lucide-react"
 export default async function EventsPage({
   searchParams,
 }: {
-  searchParams: { query?: string; category?: string; sort?: string }
+  searchParams: Promise<{ query?: string; category?: string; sort?: string }>
 }) {
   const events = await getEvents()
-  const { query, category, sort } = searchParams
+  const { query, category, sort } = await searchParams
 
   let filteredEvents = [...events]
 
