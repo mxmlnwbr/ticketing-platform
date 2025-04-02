@@ -15,7 +15,20 @@ const config = {
     },
     
     images: {
-        domains: ['as1.ftcdn.net'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'as1.ftcdn.net',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+        ],
     },
 };
 
