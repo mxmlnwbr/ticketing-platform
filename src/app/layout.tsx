@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
           <div className="relative min-h-screen">
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">

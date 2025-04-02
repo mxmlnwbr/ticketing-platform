@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Button } from "~/components/ui/button"
-import { CalendarIcon, ArrowRightIcon } from "lucide-react"
+import { CalendarIcon } from "lucide-react"
 import FeaturedEvents from "~/components/featured-events"
 import { getEvents } from "~/lib/data"
 
